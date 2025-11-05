@@ -1,58 +1,88 @@
 <!DOCTYPE html>
-<html lang="Pt-br">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Heart</title>
-    <style>
-        body {
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Heart</title>
+  <style>
+    body {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+      background: linear-gradient(135deg, #ffdee9, #b5fffc);
+      font-family: 'Poppins', sans-serif;
+    }
 
-            margin: 0;
-            padding: 0;
-        }
+    .heart {
+      width: 100px;
+      height: 100px;
+      background-color: red;
+      position: relative;
+      transform: rotate(45deg);
+      margin-bottom: 20px;
+      animation: pulse 1.2s infinite;
+    }
 
-        div {
-            width: 100px;
-            height: 100px;
-            background-color: red;
+    .heart::before,
+    .heart::after {
+      content: '';
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background-color: red;
+      position: absolute;
+      z-index: 1; /* As partes do coração ficam atrás do texto */
+    }
 
-            position: relative;
+    .heart::before {
+      transform: translateY(-50%);
+    }
 
-            transform: rotate(45deg);
-        }
+    .heart::after {
+      transform: translateX(-50%);
+    }
 
-        div::before {
-            content: '';
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            background-color: red;
+    /* Texto central */
+    .heart span {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(-45deg);
+      color: white;
+      font-size: 48px;
+      font-weight: bold;
+      text-shadow: 0 0 15px rgba(255,255,255,0.9);
+      z-index: 2; /* Fica por cima do coração */
+    }
 
-            position: absolute;
+    /* Efeito pulsando */
+    @keyframes pulse {
+      0%, 100% {
+        transform: rotate(45deg) scale(1);
+      }
+      50% {
+        transform: rotate(45deg) scale(1.1);
+      }
+    }
 
-            transform: translateY(-50%);
-        }
-
-        div::after {
-            content: '';
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            background-color: red;
-
-            position: absolute;
-
-            transform: translateX(-50%);
-        }
-    </style>
+    .message {
+      font-size: 20px;
+      color: #e91e63;
+      font-weight: 600;
+      text-shadow: 0 0 4px rgba(255, 255, 255, 0.8);
+    }
+  </style>
 </head>
 <body>
-    
-    <div></div>
+
+  <div class="heart">
+    <span>B</span>
+  </div>
+
+  <div class="message">Para você, meu amor 💝</div>
 
 </body>
 </html>
