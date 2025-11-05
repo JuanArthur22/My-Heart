@@ -12,13 +12,13 @@
       justify-content: center;
       align-items: center;
       margin: 0;
-      background: linear-gradient(135deg, #ffdee9, #b5fffc);
+      background: linear-gradient(135deg, #ff9aee, #ffb3ef);
       font-family: 'Poppins', sans-serif;
     }
 
     .heart {
-      width: 100px;
-      height: 100px;
+      width: 120px;
+      height: 120px;
       background-color: red;
       position: relative;
       transform: rotate(45deg);
@@ -34,7 +34,7 @@
       border-radius: 50%;
       background-color: red;
       position: absolute;
-      z-index: 1; /* As partes do coração ficam atrás do texto */
+      z-index: 1;
     }
 
     .heart::before {
@@ -48,14 +48,15 @@
     /* Texto central */
     .heart span {
       position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%) rotate(-45deg);
+      top: 40%;
+      left: 40%;
+      transform: translate(-50%, -60%) rotate(-45deg);
       color: white;
-      font-size: 48px;
+      font-size: 42px;
       font-weight: bold;
       text-shadow: 0 0 15px rgba(255,255,255,0.9);
-      z-index: 2; /* Fica por cima do coração */
+      z-index: 2;
+      white-space: nowrap; /* mantém o texto na mesma linha */
     }
 
     /* Efeito pulsando */
@@ -69,20 +70,22 @@
     }
 
     .message {
+      position: absolute;
+      bottom: 350px;
       font-size: 20px;
-      color: #e91e63;
+      color: #fff;
       font-weight: 600;
-      text-shadow: 0 0 4px rgba(255, 255, 255, 0.8);
+      text-shadow: 0 0 6px rgba(255, 0, 100, 0.8);
     }
   </style>
 </head>
 <body>
 
   <div class="heart">
-    <span>B</span>
+    <span>J + B</span> <!-- tudo na mesma linha -->
   </div>
 
-  <div class="message">Para você, meu amor 💝</div>
+  <div class="message">Para você, minha Lua 🥰🌙</div>
 
 </body>
 </html>
